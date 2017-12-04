@@ -3,7 +3,7 @@
 
 ## Why ?
 
-PHP is a cancer every sysadmin has to live with. There's no cure and the only think we can do is try to lower the pain.
+PHP is a cancer every sysadmin has to live with. There's no cure and the only thing we can do is try to lower the pain.
 
 PHP API is changing so much at each minor release that when you're upgrading your Debian version you're pretty sure some PHP code will breaks.
 
