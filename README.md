@@ -5,7 +5,7 @@
 
 PHP is a cancer every sysadmin has to live with. There's no cure and the only thing we can do is try to lower the pain.
 
-PHP API is changing so much at each minor release that when you're upgrading your Debian version you're pretty sure some PHP code will breaks.
+PHP API is changing so much at each minor release that when you're upgrading your Debian version you're pretty sure some PHP code will break.
 
 Sometime it's trivial to fix, sometime it's not and sometime you cannot afford leaving an old rarely used page (but critical) to break at some point.
 
@@ -14,7 +14,7 @@ And well, most of the time, nobody will be wiling to fix it because it's either 
 
 ## So what can I do ?
 
-Leave PHP in the version it was and upgrade your server anyway. People will propbably recommends using some "official" PHP containers or run everything in the container, including NGINX/Apache.
+Leave PHP in the version it was and upgrade your server anyway. People will propably recommend using some "official" PHP containers or run everything in the container, including NGINX/Apache.
 
 That's obviously a bad practise.
 
@@ -39,7 +39,7 @@ Everything is configured to log on host's syslog server
 
 * Clone the repository and edit Dockerfile. You may change the list of installed package or add some sed to modify your fpm or base php.ini configuration.
 * Run ./build.sh
-* Edit run.sh to fix at least the "www" folder volume. Keep it at the same path as your host to avoid breaking everything because your skilled developpers put absolutes pathes into the code. Restrict if possible the path mounted into the container for obvious security reasons.
+* Edit run.sh to fix at least the "www" folder volume. Keep it at the same path as your host to avoid breaking everything because your skilled developpers put absolutes paths into the code. Restrict if possible the path mounted into the container for obvious security reasons.
 * Modify your apache configuration and add the following:
 ```
        <FilesMatch "\.php$">
