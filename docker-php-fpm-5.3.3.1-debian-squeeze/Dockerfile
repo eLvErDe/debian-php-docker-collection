@@ -58,6 +58,9 @@ RUN sed -i 's!^;\?\(error_reporting\s*=\).*$!\1 E_ALL \& ~E_DEPRECATED \& ~E_STR
 # Set timezone
 RUN sed -i 's!^;\?\(date.timezone\s*=\).*$!\1 Europe/Paris!' /etc/php5/fpm/php.ini
 
+#  Increase memory size
+RUN sed -i 's!^;\?\(memory_limit\s*=\).*$!\1 512M!' /etc/php5/fpm/php.ini
+
 # Some env variables
 RUN sed -i 's!^;\(env\[[A-Z]\+\].*\)!\1!' /etc/php5/fpm/pool.d/www.conf
 
