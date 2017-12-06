@@ -42,6 +42,7 @@ RUN apt-get update \
        php5-pgsql \
        php5-gd \
        php5-mcrypt \
+       imagemagick \
     && rm -rf /var/lib/apt/lists/*
 
 # Listen on TCP socket
