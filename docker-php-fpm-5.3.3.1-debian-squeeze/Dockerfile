@@ -34,7 +34,7 @@ RUN apt-get update \
     && apt-get -y -o 'Dpkg::Options::=--force-confdef' -o 'Dpkg::Options::=--force-confold' --no-install-recommends install \
        reptyr procps \
        sendmail \
-       wget \
+       wget ca-certificates \
        sudo \
        php5-cli \
        php5-fpm \
