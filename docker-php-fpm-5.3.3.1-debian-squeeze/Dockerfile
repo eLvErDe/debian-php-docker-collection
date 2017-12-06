@@ -53,7 +53,7 @@ RUN sed -i 's!^;\?\(error_log\s*=\s*\).*$!\1syslog!' /etc/php5/fpm/php-fpm.conf
 RUN sed -i 's!^;\?\(syslog\.ident\s*=\s*\).*$!\1php-fpm-5.3.3.1-debian-squeeze!' /etc/php5/fpm/php-fpm.conf
 
 # Relax error_reporting
-RUN sed -i 's!^;\?\(error_reporting\s*=\s*\).*$!\1E_ALL \& ~E_DEPRECATED \& ~E_STRICT \& ~E_NOTICE!' /etc/php5/fpm/php.ini
+RUN sed -i 's!^;\?\(error_reporting\s*=\).*$!\1 E_ALL \& ~E_DEPRECATED \& ~E_STRICT \& ~E_NOTICE!' /etc/php5/fpm/php.ini
 
 # Some env variables
 RUN sed -i 's!^;\(env\[[A-Z]\+\].*\)!\1!' /etc/php5/fpm/pool.d/www.conf
