@@ -55,6 +55,9 @@ RUN sed -i 's!^;\?\(syslog\.ident\s*=\s*\).*$!\1php-fpm-5.3.3.1-debian-squeeze!'
 # Relax error_reporting
 RUN sed -i 's!^;\?\(error_reporting\s*=\).*$!\1 E_ALL \& ~E_DEPRECATED \& ~E_STRICT \& ~E_NOTICE!' /etc/php5/fpm/php.ini
 
+# Set timezone
+RUN sed -i 's!^;\?\(date.timezone\s*=\).*$!\1 Europe/Paris!' /etc/php5/fpm/php.ini
+
 # Some env variables
 RUN sed -i 's!^;\(env\[[A-Z]\+\].*\)!\1!' /etc/php5/fpm/pool.d/www.conf
 
