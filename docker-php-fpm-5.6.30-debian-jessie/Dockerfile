@@ -29,8 +29,6 @@ RUN apt-get update \
        php5-gd \
        php5-mcrypt \
        php5-enchant \
-       php5-xml \
-       php5-mbstring \
        imagemagick \
     && rm -rf /var/lib/apt/lists/*
 
