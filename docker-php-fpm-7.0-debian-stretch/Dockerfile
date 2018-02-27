@@ -29,6 +29,7 @@ RUN apt-get update \
        php-gd \
        php-mcrypt \
        php-enchant \
+       php-xml \
        imagemagick \
     && rm -rf /var/lib/apt/lists/*
 
