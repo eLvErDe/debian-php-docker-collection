@@ -28,6 +28,7 @@ RUN apt-get update \
        php5-pgsql \
        php5-gd \
        php5-mcrypt \
+       php5-enchant \
        imagemagick \
     && rm -rf /var/lib/apt/lists/*
 
