@@ -53,5 +53,8 @@ RUN sed -i 's!^;\?\(memory_limit\s*=\).*$!\1 512M!' /etc/php5/fpm/php.ini
 RUN sed -i 's!^;\?\(post_max_size\s*=\).*$!\1 16M!' /etc/php5/fpm/php.ini
 RUN sed -i 's!^;\?\(upload_max_filesize\s*=\).*$!\1 8M!' /etc/php5/fpm/php.ini
 
+# Increase max execution time
+RUN sed -i 's!^;\?\(max_execution_time\s*=\).*$!\1 60!' /etc/php5/fpm/php.ini
+
 # Some env variables
 RUN sed -i 's!^;\(env\[[A-Z]\+\].*\)!\1!' /etc/php5/fpm/pool.d/www.conf
