@@ -49,10 +49,10 @@ RUN sed -i 's!^;\?\(error_reporting\s*=\).*$!\1 E_ALL \& ~E_DEPRECATED \& ~E_STR
 # Set timezone
 RUN sed -i 's!^;\?\(date.timezone\s*=\).*$!\1 Europe/Paris!' /etc/php/7.0/fpm/php.ini
 
-#  Increase memory size
+# Increase memory size
 RUN sed -i 's!^;\?\(memory_limit\s*=\).*$!\1 512M!' /etc/php/7.0/fpm/php.ini
 
-#  Increase post_max_size and upload_max_filesize
+# Increase post_max_size and upload_max_filesize
 RUN sed -i 's!^;\?\(post_max_size\s*=\).*$!\1 16M!' /etc/php/7.0/fpm/php.ini
 RUN sed -i 's!^;\?\(upload_max_filesize\s*=\).*$!\1 8M!' /etc/php/7.0/fpm/php.ini
 
