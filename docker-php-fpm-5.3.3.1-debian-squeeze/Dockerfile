@@ -24,9 +24,9 @@ RUN sed -i 's!h:!H:!g' /etc/bash.bashrc
 
 # Install my custom repository with backported php5-fpm
 # Call wget with --no-check-certificate because Squeeze doesn't trust letsencrypt
-RUN echo "deb http://packages.le-vert.net/php5-fpm-squeeze/debian squeeze main" > /etc/apt/sources.list.d/packages_le_vert_net_php5_fpm_squeeze.list \
-    && apt-get update \
+RUN apt-get update \
     && apt-get -y -o 'Dpkg::Options::=--force-confdef' -o 'Dpkg::Options::=--force-confold' --no-install-recommends install wget ca-certificates \
+    && echo "deb http://packages.le-vert.net/php5-fpm-squeeze/debian squeeze main" > /etc/apt/sources.list.d/packages_le_vert_net_php5_fpm_squeeze.list \
     && wget --no-check-certificate -O - https://packages.le-vert.net/packages.le-vert.net.gpg.key | apt-key add - \
     && rm -rf /var/lib/apt/lists/*
 
