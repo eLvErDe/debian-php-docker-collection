@@ -11,7 +11,8 @@ WORKDIR /root
 # Fix incorrect sources.list
 RUN echo "deb http://archive.debian.org/debian squeeze main" > /etc/apt/sources.list \
     && echo "deb http://archive.debian.org/debian squeeze-lts main" >> /etc/apt/sources.list \
-    && echo 'Acquire::Check-Valid-Until "0";' > /etc/apt/apt.conf.d/00-ignore-check-valid-until
+    && echo 'Acquire::Check-Valid-Until "0";' > /etc/apt/apt.conf.d/00-ignore-check-valid-until \
+    && echo 'APT::Get::AllowUnauthenticated "1";' > /etc/apt/apt.conf.d/00-allow-unauthenticated
 
 # Upgrade base system
 RUN apt-get update \
