@@ -8,6 +8,12 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /root
 
+# Fix incorrect sources.list
+RUN echo "deb http://archive.debian.org/debian wheezy main" > /etc/apt/sources.list \
+    && echo "deb http://archive.debian.org/debian-security wheezy/updates main" >> /etc/apt/sources.list \
+    && echo 'Acquire::Check-Valid-Until "0";' > /etc/apt/apt.conf.d/00-ignore-check-valid-until \
+    && echo 'APT::Get::AllowUnauthenticated "1";' > /etc/apt/apt.conf.d/00-allow-unauthenticated
+
 # Upgrade base system
 RUN apt-get update \
     && apt-get -y -o 'Dpkg::Options::=--force-confdef' -o 'Dpkg::Options::=--force-confold' --no-install-recommends dist-upgrade \
