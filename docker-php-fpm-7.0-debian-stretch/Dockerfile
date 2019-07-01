@@ -29,6 +29,7 @@ RUN apt-get update \
        php-gd \
        php-mcrypt \
        php-enchant \
+       php-curl \
        php-xml \
        php-mbstring \
        imagemagick \
