@@ -77,6 +77,8 @@ Or for all four container in one single loop:
 
 ```
 for container in php-fpm-5.3.3.1-debian-squeeze php-fpm-5.4.45-debian-wheezy php-fpm-5.6.30-debian-jessie php-fpm-7.0-debian-stretch; \
-  do docker exec ${container} sh -c 'cat /etc/cron.d/php*' | sed "s|^\(.*root\s\+\)\(.*\)\$|\1 docker exec ${container} /bin/sh -c '\2'|"> /etc/cron.d/local-docker-${container}; \
+  do \
+    container_no_dots=`echo ${container} | sed 's/\./-/g'`; \
+    docker exec ${container} sh -c 'cat /etc/cron.d/php*' | sed "s|^\(.*root\s\+\)\(.*\)\$|\1 docker exec ${container} /bin/sh -c '\2'|"> /etc/cron.d/local-docker-${container_no_dots}; \
 done
 ```
