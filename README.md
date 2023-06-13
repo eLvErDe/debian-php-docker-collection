@@ -51,6 +51,8 @@ Everything is configured to log on host's syslog server
   * 9003 for Debian Wheezy with PHP 5.4.45
   * 9002 for Debian Jessie with PHP 5.6.30
   * 9001 for Debian Stretch with PHP 7.0
+  * 9005 for Debian Buster with PHP 7.3.31
+  * 9006 for Debian Bullseye with PHP 7.4.33
   
 ## Example
 
