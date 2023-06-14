@@ -63,3 +63,9 @@ RUN sed -i 's!^;\?\(max_execution_time\s*=\).*$!\1 60!' /etc/php/7.4/fpm/php.ini
 
 # Some env variables
 RUN sed -i 's!^;\(env\[[A-Z]\+\].*\)!\1!' /etc/php/7.4/fpm/pool.d/www.conf
+
+# Redirect PHP error to FPM stderr so it get displayed in docker logs
+RUN sed -i -e 's!^;\?\(catch_workers_output\s*=\).*$!\1 yes!' -e 's!^;\?\(decorate_workers_output\s*=\).*$!\1 no!' /etc/php/7.4/fpm/pool.d/www.conf
+
+# Disable PID file (needed to run as www-data user for example)
+RUN sed -i 's!^;\?\(pid\s*=\)\(.*\)$!;\1 \2!' /etc/php/7.4/fpm/php-fpm.conf
