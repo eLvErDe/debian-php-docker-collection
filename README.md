@@ -54,6 +54,7 @@ Everything is configured to log on host's syslog server
   * 9005 for Debian Buster with PHP 7.3.31
   * 9006 for Debian Bullseye with PHP 7.4.33
   * 9007 for Ubuntu Jammy with PHP 8.1.2
+  * 9008 for Debian Bookworm with PHP 8.2.20
   
 ## Example
 
